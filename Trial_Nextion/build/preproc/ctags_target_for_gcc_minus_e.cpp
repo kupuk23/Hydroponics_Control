@@ -1,6 +1,6 @@
-# 1 "D:\\TAFARREL\\Hydroponics\\Hydroponics_Control\\Trial_Nextion\\Trial_Nextion.ino"
+# 1 "E:\\Codes\\Hydroponics_Control\\Trial_Nextion\\Trial_Nextion.ino"
 
-# 3 "D:\\TAFARREL\\Hydroponics\\Hydroponics_Control\\Trial_Nextion\\Trial_Nextion.ino" 2
+# 3 "E:\\Codes\\Hydroponics_Control\\Trial_Nextion\\Trial_Nextion.ino" 2
 
 int CurrentPage = 0;
 NexButton bSetting = NexButton(0, 7, "bSetting"); // Button added

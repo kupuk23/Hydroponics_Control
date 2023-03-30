@@ -1,3 +1,3 @@
-D:\TAFARREL\Hydroponics\Hydroponics_Control\Trial_Nextion\build\core\WString.cpp.o: \
- C:\Users\User-PC\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino\WString.cpp \
- C:\Users\User-PC\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino\WString.h
+E:\Codes\Hydroponics_Control\Trial_Nextion\build\core\WString.cpp.o: \
+ C:\Users\kupuk\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino\WString.cpp \
+ C:\Users\kupuk\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino\WString.h

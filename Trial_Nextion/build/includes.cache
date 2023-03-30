@@ -2,185 +2,185 @@
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "C:\\Users\\User-PC\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino"
+    "Includepath": "C:\\Users\\kupuk\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino"
   },
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "C:\\Users\\User-PC\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\standard"
+    "Includepath": "C:\\Users\\kupuk\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\standard"
   },
   {
-    "Sourcefile": "D:\\TAFARREL\\Hydroponics\\Hydroponics_Control\\Trial_Nextion\\build\\sketch\\Trial_Nextion.ino.cpp",
+    "Sourcefile": "E:\\Codes\\Hydroponics_Control\\Trial_Nextion\\build\\sketch\\Trial_Nextion.ino.cpp",
     "Include": "Nextion.h",
-    "Includepath": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master"
+    "Includepath": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master"
   },
   {
-    "Sourcefile": "D:\\TAFARREL\\Hydroponics\\Hydroponics_Control\\Trial_Nextion\\build\\sketch\\Trial_Nextion.ino.cpp",
+    "Sourcefile": "E:\\Codes\\Hydroponics_Control\\Trial_Nextion\\build\\sketch\\Trial_Nextion.ino.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexButton.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexButton.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexCheckbox.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexCheckbox.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexCrop.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexCrop.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexDualStateButton.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexDualStateButton.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexGauge.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexGauge.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexGpio.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexGpio.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexHardware.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexHardware.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexHotspot.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexHotspot.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexNumber.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexNumber.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexObject.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexObject.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexPage.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexPage.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexPicture.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexPicture.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexProgressBar.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexProgressBar.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexRadio.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexRadio.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexRtc.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexRtc.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexScrolltext.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexScrolltext.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexSlider.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexSlider.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexText.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexText.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexTimer.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexTimer.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexTouch.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexTouch.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
     "Include": "SPI.h",
-    "Includepath": "C:\\Users\\User-PC\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src"
+    "Includepath": "C:\\Users\\kupuk\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src"
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
     "Include": "SD.h",
-    "Includepath": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\SD\\src"
+    "Includepath": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\SD\\src"
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
     "Include": "SoftwareSerial.h",
-    "Includepath": "C:\\Users\\User-PC\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src"
+    "Includepath": "C:\\Users\\kupuk\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src"
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexUpload.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexVariable.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexVariable.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexWaveform.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\ITEADLIB_Arduino_Nextion-master\\NexWaveform.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src\\SPI.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src\\SPI.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\SD\\src\\File.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\SD\\src\\File.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\SD\\src\\SD.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\SD\\src\\SD.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\SD\\src\\utility\\Sd2Card.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\SD\\src\\utility\\Sd2Card.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\SD\\src\\utility\\SdFile.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\SD\\src\\utility\\SdFile.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\Documents\\Arduino\\libraries\\SD\\src\\utility\\SdVolume.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\Documents\\Arduino\\libraries\\SD\\src\\utility\\SdVolume.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\User-PC\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src\\SoftwareSerial.cpp",
+    "Sourcefile": "C:\\Users\\kupuk\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src\\SoftwareSerial.cpp",
     "Include": "",
     "Includepath": null
   }
