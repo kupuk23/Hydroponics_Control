@@ -1,6 +1,7 @@
 {
     "board": "arduino:avr:uno",
-    "programmer": "avrisp",
+    "programmer": "avrispmkii",
     "sketch": "Trial_Nextion\\Trial_Nextion.ino",
-    "output": "Trial_Nextion\\build"
+    "output": "Trial_Nextion\\build",
+    "port": "COM5"
 }
