@@ -23,32 +23,33 @@ void nex_SendTime(int yr, int m, int d, int h, int mnt, int s) {
 
 void nex_updateSP() {
   uint32_t retrievedSP[12];
-  nexSP1_h.getValue(&retrievedSP[0]);
-  delay(50);
-  nexSP1End_h.getValue(&retrievedSP[1]);
-  delay(50);
-  nexSP2_h.getValue(&retrievedSP[2]);
-  delay(50);
-  nexSP2End_h.getValue(&retrievedSP[3]);
-  delay(50);
-  nexSP3_h.getValue(&retrievedSP[4]);
-  delay(50);
-  nexSP3End_h.getValue(&retrievedSP[5]);
-  delay(50);
-//  nexSP1_m.getValue(&retrievedSP[6]);
-//  nexSP1End_m.getValue(&retrievedSP[7]);
-//  nexSP2_m.getValue(&retrievedSP[8]);
-//  nexSP2End_m.getValue(&retrievedSP[9]);
-//  nexSP3_m.getValue(&retrievedSP[10]);
-//  nexSP3End_m.getValue(&retrievedSP[11]);
+
+  //  nexSP1_h.getValue(&retrievedSP[0]);
+  //  delay(100);
+  //  nexSP1End_h.getValue(&retrievedSP[1]);
+  //  delay(100);
+  //  nexSP2_h.getValue(&retrievedSP[2]);
+  //  delay(100);
+  //  nexSP2End_h.getValue(&retrievedSP[3]);
+  //  delay(100);
+  //  nexSP3_h.getValue(&retrievedSP[4]);
+  //  delay(100);
+  //  nexSP3End_h.getValue(&retrievedSP[5]);
+  //  delay(100);
+  //  nexSP1_m.getValue(&retrievedSP[6]);
+  //  nexSP1End_m.getValue(&retrievedSP[7]);
+  //  nexSP2_m.getValue(&retrievedSP[8]);
+  //  nexSP2End_m.getValue(&retrievedSP[9]);
+  //  nexSP3_m.getValue(&retrievedSP[10]);
+  //  nexSP3End_m.getValue(&retrievedSP[11]);
   //Serial.println(retrievedSP[0]);
   for (int i = 0; i < 6; i++) {
-    //EEPROM.write(i + 1, retrievedSP[i]);
-    Serial.print(retrievedSP[i]);
+    EEPROM.write(i + 1, retrievedSP[i]);
+    //Serial.print(retrievedSP[i]);
 
   }
-
-  //call_setPoint();
+  delay(100);
+  call_setPoint();
 }
 
 
@@ -85,11 +86,29 @@ void bSettingPushCallback(void *ptr)  // Press event for button b1
 
 void bUpdatePushCallback(void *ptr)  // Press event for button b1
 {
-  nex_updateSP();
-  delay(500);
-  //nex_sendSP();
+  nex_setpoints.getText(buffer, sizeof(buffer));
+  char str_setpoints[sizeof(buffer)] = buffer;
+  //Serial.println(buffer);
+  //writeStringToEEPROM(20,str_setpoints);
+  splitSP(str_setpoints);
+  //  nex_updateSP();
+  //  delay(500);
+  //  nex_sendSP();
 }  // End of press event
 
+void splitSP(char setP[]) {
+
+  char* token = strtok(setP, ",");
+  int i=0;
+  while (token != NULL) {
+
+    Serial.println(token);
+    //EEPROM.write(20+i,atoi(token));
+    token = strtok(NULL, ",");
+    i++;
+  }
+
+}
 void btLampPushCallback(void *ptr)  // Press event for button b1
 {
   digitalWrite(13, HIGH);  // Turn ON internal LED

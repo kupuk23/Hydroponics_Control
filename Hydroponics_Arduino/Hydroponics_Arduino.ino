@@ -89,6 +89,7 @@ NexNumber nexSP3_h = NexNumber(1, 18, "SP3_h");
 NexNumber nexSP3_m = NexNumber(1, 19, "SP3_m");
 NexNumber nexSP3End_h = NexNumber(1, 20, "SP3End_h");
 NexNumber nexSP3End_m = NexNumber(1, 21, "SP3End_m");
+NexText nex_setpoints = NexText(1, 45, "setpoints");
 NexButton bSetting = NexButton(0, 7, "bSetting");  // Button added
 NexButton bBack = NexButton(1, 21, "bBack");       // Button added
 NexButton bUpdate = NexButton(1, 26, "bUpdate");   // Button added
@@ -115,6 +116,8 @@ NexTouch *nex_listen_list[] =
 //String parsedHour, parsedMin;
 //int ind1, ind2, hour_now, min_now;
 
+
+String str = "1,2,3,4,5,6,7,8";
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
@@ -142,15 +145,15 @@ void setup() {
 
 
   Wire.begin();
-  Serial.begin(9600);  // Start serial comunication at baud=9600
-  delay(500);  // This dalay is just in case the nextion display didn't start yet, to be sure it will receive the following command.
-  Serial.print("baud=115200");  // Set new baud rate of nextion to 115200, but it's temporal. Next time nextion is power on,
-  // it will retore to default baud of 9600.
-  Serial.write(0xff);  // We always have to send this three lines after each command sent to nextion.
-  Serial.write(0xff);
-  Serial.write(0xff);
+  //  Serial.begin(9600);  // Start serial comunication at baud=9600
+  //  delay(500);  // This dalay is just in case the nextion display didn't start yet, to be sure it will receive the following command.
+  //  Serial.print("baud=115200");  // Set new baud rate of nextion to 115200, but it's temporal. Next time nextion is power on,
+  //  // it will retore to default baud of 9600.
+  //  Serial.write(0xff);  // We always have to send this three lines after each command sent to nextion.
+  //  Serial.write(0xff);
+  //  Serial.write(0xff);
 
-  Serial.end();  // End the serial comunication of baud=9600
+  //  Serial.end();  // End the serial comunication of baud=9600
 
   Serial.begin(115200);  // Start serial comunication at baud=115200
 
@@ -185,9 +188,12 @@ void setup() {
   // Serial.println(F("°C "));
 
   //save_setPoint();
+  //splitSP(str_setpoints);
   call_setPoint();
   delay(1000);
 }
+
+
 
 
 void loop() {
