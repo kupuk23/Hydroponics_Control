@@ -4,6 +4,7 @@
 #include <EEPROM.h>
 #include <Nextion.h>
 #include <avr/pgmspace.h>
+#include <stdlib.h>
 
 #define TIMER_INTERVAL_MS 1
 #define LED_ON_TIME_MS 3000
@@ -116,7 +117,7 @@ NexTouch *nex_listen_list[] =
 //String parsedHour, parsedMin;
 //int ind1, ind2, hour_now, min_now;
 
-
+uint32_t force_lamp = false;
 String str = "1,2,3,4,5,6,7,8";
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -204,7 +205,6 @@ void loop() {
 
   if (currentMillis - previousMillis >= interval) {
     getTime();
-
     //    sprintf (buffer2, "%d/%d/%d\t%d:%d:%d", year, month, date, hour, minute, second);
     //    Serial.println(buffer2);
     LEDcontrol();
@@ -214,7 +214,7 @@ void loop() {
   checkMode();
 
 
-  delay(100);
+  delay(50);
   nexLoop(nex_listen_list);
 }
 

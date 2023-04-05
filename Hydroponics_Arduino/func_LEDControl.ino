@@ -5,45 +5,39 @@
 */
 
 
-struct Object {
-  int hour;
-  int minute;
-};
 
-Object time2;
+
 void LEDcontrol () {
 
-  //Datetime2 time2 = RTClib::now();
-  time2.hour = 10;
-  time2.minute = 0;
-  // Serial.print(setpoint[0]);
-  // Serial.print("  ");
-  // Serial.print(time2.hour );
-  // Serial.print("  ");
-  // Serial.println(setpoint[1]);
-  
 
-  for (int a = 0; a <= 4; a = a + 2)
-  { if (setpoint[0][a] <= time2.hour && time2.hour <= setpoint[0][a + 1])
-    {
+  if (!force_lamp) {
+    for (int a = 0; a <= 4; a = a + 2)
+    { if (setpoint[0][a] <= hour && hour <= setpoint[0][a + 1])
+      {
 
-      if (time2.hour == setpoint[0][a]) {
-        if (time2.minute >= setpoint[1][a])
-          growLight_ON(a);
-        else growLight_OFF(a);
+        if (hour == setpoint[0][a]) {
+          if (minute >= setpoint[1][a])
+            growLight_ON(a);
+          else growLight_OFF(a);
+
+        }
+        else if (hour == setpoint[0][a + 1]) {
+          if (minute < setpoint[1][a + 1]) growLight_ON(a);
+          else  growLight_OFF(a);
+        }
+
+        else growLight_ON(a);
 
       }
-      else if (time2.hour == setpoint[0][a + 1]) {
-        if (time2.minute < setpoint[1][a + 1]) growLight_ON(a);
-        else  growLight_OFF(a);
-      }
 
-      else growLight_ON(a);
-
+      else  growLight_OFF(a);
     }
-  
-  else  growLight_OFF(a);
-}
+  }
+  else {
+    digitalWrite(11, HIGH);  // Turn ON internal LED
+    digitalWrite(12, HIGH);
+    digitalWrite(13, HIGH);
+  }
 }
 
 
