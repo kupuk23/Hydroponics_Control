@@ -1,13 +1,16 @@
-float measureDHT22() { //DHT22 Sensor
-  temperature = dht.readTemperature();
+void measureDHT22() { //DHT22 Sensor
   humidity = dht.readHumidity();
+  temperature = dht.readTemperature();
+  Serial.print("humidity.txt=\"");
+  Serial.print(humidity);
+  Serial.print("\"");
+  //Serial.write(buffer2);
+  clearNextionSerial();
 
-  // Check if any reads failed and exit early (to try again).
-  if (isnan(temperature) || isnan(humidity)) {
-    Serial.println(F("Failed to read from DHT sensor!"));
-    return (0,0);
-  }
-  else return (temperature, humidity);
+  Serial.print("suhu.txt=\"");
+  Serial.print(temperature);
+  Serial.print("\"");
+  clearNextionSerial();
 }
 
 float measureTDS() {
@@ -15,5 +18,5 @@ float measureTDS() {
 }
 
 float measurePH() {
-  
+
 }

@@ -6,14 +6,20 @@
 #include <avr/pgmspace.h>
 #include <stdlib.h>
 
+//DECLARE DHT
+#define DHTPIN 6
+#define DHTTYPE DHT22
+
+//DECLARE ULTRASONIC
+#define trigPin 7 //Out
+#define echoPin 8 //In
+
 #define TIMER_INTERVAL_MS 1
 #define LED_ON_TIME_MS 3000
 
 
 #define SDA A4
 #define SCL A5
-#define DHTPIN 5
-#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 #define SELECTOR 4
 #define PUMP 9
 #define LIMIT_SW 10
@@ -35,6 +41,8 @@ bool autoMode = true;
 int exhaust_fan = 3; //PWM out pin 3
 
 DS3231 myRTC;
+DHT dht(DHTPIN, DHTTYPE);
+
 
 const long interval = 500;
 unsigned long currentMillis;
@@ -94,7 +102,7 @@ NexText nex_setpoints = NexText(1, 45, "setpoints");
 NexButton bSetting = NexButton(0, 7, "bSetting");  // Button added
 NexButton bBack = NexButton(1, 21, "bBack");       // Button added
 NexButton bUpdate = NexButton(1, 26, "bUpdate");   // Button added
-NexDSButton btLamp = NexDSButton(1, 38, "btLamp"); // Dual state button added
+NexDSButton btLamp = NexDSButton(1, 37, "btLamp"); // Dual state button added
 NexPage page0 = NexPage(0, 0, "page0"); // Page added as a touch event
 NexPage page1 = NexPage(1, 0, "page1"); // Page added as a touch event
 
@@ -117,9 +125,8 @@ NexTouch *nex_listen_list[] =
 //String parsedHour, parsedMin;
 //int ind1, ind2, hour_now, min_now;
 
-uint32_t force_lamp = false;
+uint32_t force_lamp = 0;
 String str = "1,2,3,4,5,6,7,8";
-DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
   //TIMER ISR
@@ -143,20 +150,11 @@ void setup() {
   pinMode(LED_STRIP, OUTPUT);
   pinMode(exhaust_fan, OUTPUT);
   pinMode(3, OUTPUT);
-
+  pinMode(DHTPIN, INPUT);
 
   Wire.begin();
-  //  Serial.begin(9600);  // Start serial comunication at baud=9600
-  //  delay(500);  // This dalay is just in case the nextion display didn't start yet, to be sure it will receive the following command.
-  //  Serial.print("baud=115200");  // Set new baud rate of nextion to 115200, but it's temporal. Next time nextion is power on,
-  //  // it will retore to default baud of 9600.
-  //  Serial.write(0xff);  // We always have to send this three lines after each command sent to nextion.
-  //  Serial.write(0xff);
-  //  Serial.write(0xff);
-
-  //  Serial.end();  // End the serial comunication of baud=9600
-
   Serial.begin(115200);  // Start serial comunication at baud=115200
+  dht.begin();
 
   bSetting.attachPush(bSettingPushCallback);
   bUpdate.attachPush(bUpdatePushCallback);
@@ -204,9 +202,10 @@ void loop() {
   //temperature, humidity = measureDHT22();
 
   if (currentMillis - previousMillis >= interval) {
-    getTime();
+//    getTime();
     //    sprintf (buffer2, "%d/%d/%d\t%d:%d:%d", year, month, date, hour, minute, second);
     //    Serial.println(buffer2);
+    measureDHT22();
     LEDcontrol();
     previousMillis = currentMillis;
   }

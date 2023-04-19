@@ -10,20 +10,20 @@
 void LEDcontrol () {
 
 
-  if (!force_lamp) {
+  if (force_lamp != 1) {
     for (int a = 0; a <= 4; a = a + 2)
     { if (setpoint[0][a] <= hour && hour <= setpoint[0][a + 1])
       {
-
-        if (hour == setpoint[0][a]) {
+        if (((hour == setpoint[0][a]) && (hour == setpoint[0][a + 1])) || (hour == setpoint[0][a + 1])) {
+          if (minute < setpoint[1][a + 1]) growLight_ON(a);
+          else  growLight_OFF(a);
+          
+          }
+        else if (hour == setpoint[0][a]) {
           if (minute >= setpoint[1][a])
             growLight_ON(a);
           else growLight_OFF(a);
 
-        }
-        else if (hour == setpoint[0][a + 1]) {
-          if (minute < setpoint[1][a + 1]) growLight_ON(a);
-          else  growLight_OFF(a);
         }
 
         else growLight_ON(a);
@@ -34,9 +34,9 @@ void LEDcontrol () {
     }
   }
   else {
-    digitalWrite(11, HIGH);  // Turn ON internal LED
-    digitalWrite(12, HIGH);
-    digitalWrite(13, HIGH);
+    digitalWrite(LAMP1, HIGH);  // Turn ON internal LED
+    digitalWrite(LAMP2, HIGH);
+    digitalWrite(LAMP3, HIGH);
   }
 }
 

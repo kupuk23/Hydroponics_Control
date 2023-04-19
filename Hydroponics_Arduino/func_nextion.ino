@@ -85,10 +85,12 @@ void splitSP(char* setP) {
   for (int i = 0; i < 12; i++)  EEPROM.write(i + 1, retrievedSP[i]);
 }
 
-void btLampPushCallback(void *ptr)  // Press event for button b1
+void btLampPushCallback(void *ptr)  // Press event for button btLamp
 {
+  
   btLamp.getValue(&force_lamp);
-
+  Serial.print(force_lamp);
+  clearNextionSerial();
 }  // End of press event
 
 
