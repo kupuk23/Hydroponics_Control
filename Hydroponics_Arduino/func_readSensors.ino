@@ -1,6 +1,6 @@
-void measureDHT22() { //DHT22 Sensor
-  humidity = dht.readHumidity();
-  temperature = dht.readTemperature();
+float measureDHT22() {  //DHT22 Sensor
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();
   Serial.print("humidity.txt=\"");
   Serial.print(humidity);
   Serial.print("\"");
@@ -11,12 +11,11 @@ void measureDHT22() { //DHT22 Sensor
   Serial.print(temperature);
   Serial.print("\"");
   clearNextionSerial();
+  return (humidity);
 }
 
 float measureTDS() {
-
 }
 
 float measurePH() {
-
 }

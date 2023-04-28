@@ -27,18 +27,17 @@
 #define LAMP2 12
 #define LAMP3 13
 #define LED_STRIP 2
-
-//byte set_year = 23;
-//byte set_month = 03;
-//byte set_date = 31;
-//byte set_hour = 13;
-//byte set_minute = 41;
-//byte set_second = 0;
+#define exhaust_fan 3
+// byte set_year = 23;
+// byte set_month = 03;
+// byte set_date = 31;
+// byte set_hour = 13;
+// byte set_minute = 41;
+// byte set_second = 0;
 
 int hour, minute;
 bool autoMode = true;
 
-int exhaust_fan = 3; //PWM out pin 3
 
 DS3231 myRTC;
 DHT dht(DHTPIN, DHTTYPE);
@@ -49,12 +48,11 @@ unsigned long currentMillis;
 unsigned long previousMillis;
 
 
-float temperature, humidity;
 volatile bool ledOn = false;
 volatile int interruptCounter = 0;
 bool door_opened = false;
 bool limitSW_state, selector_state;
-char buffer[100] = {0};
+char buffer[40] = {0};
 
 /*
   [0][x] = Hour, [1][x] = Minute,
@@ -86,18 +84,6 @@ const char *const nex_SPvar[][6] PROGMEM = {{st_SP1_h, st_SP1End_h, st_SP2_h, st
 
 int CurrentPage = 0;
 char buffer2[40];
-NexNumber nexSP1_h = NexNumber(1, 10, "SP1_h");
-NexNumber nexSP1_m = NexNumber(1, 11, "SP1_m");
-NexNumber nexSP1End_h = NexNumber(1, 12, "SP1End_h");
-NexNumber nexSP1End_m = NexNumber(1, 13, "SP1End_m");
-NexNumber nexSP2_h = NexNumber(1, 14, "SP2_h");
-NexNumber nexSP2_m = NexNumber(1, 15, "SP2_m");
-NexNumber nexSP2End_h = NexNumber(1, 16, "SP2End_h");
-NexNumber nexSP2End_m = NexNumber(1, 17, "SP2End_m");
-NexNumber nexSP3_h = NexNumber(1, 18, "SP3_h");
-NexNumber nexSP3_m = NexNumber(1, 19, "SP3_m");
-NexNumber nexSP3End_h = NexNumber(1, 20, "SP3End_h");
-NexNumber nexSP3End_m = NexNumber(1, 21, "SP3End_m");
 NexText nex_setpoints = NexText(1, 45, "setpoints");
 NexButton bSetting = NexButton(0, 7, "bSetting");  // Button added
 NexButton bBack = NexButton(1, 21, "bBack");       // Button added
@@ -126,7 +112,6 @@ NexTouch *nex_listen_list[] =
 //int ind1, ind2, hour_now, min_now;
 
 uint32_t force_lamp = 0;
-String str = "1,2,3,4,5,6,7,8";
 
 void setup() {
   //TIMER ISR
