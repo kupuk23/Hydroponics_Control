@@ -1,19 +1,12 @@
 #include "DS3231.h"
-#include "DHT.h"
 #include <Wire.h>
 #include <EEPROM.h>
 #include <Nextion.h>
 #include <avr/pgmspace.h>
 #include <stdlib.h>
+#include <SoftwareSerial.h>
 
-//DECLARE DHT
-#define DHTPIN 6
-#define DHTTYPE DHT22
-
-//DECLARE ULTRASONIC
-#define trigPin 7 //Out
-#define echoPin 8 //In
-
+SoftwareSerial espSerial(5, 6);
 #define TIMER_INTERVAL_MS 1
 #define LED_ON_TIME_MS 3000
 
@@ -40,9 +33,8 @@ bool autoMode = true;
 
 
 DS3231 myRTC;
-DHT dht(DHTPIN, DHTTYPE);
 
-
+String temp, humid, tds, ph, dist;
 const long interval = 500;
 unsigned long currentMillis;
 unsigned long previousMillis;
@@ -135,12 +127,11 @@ void setup() {
   pinMode(LED_STRIP, OUTPUT);
   pinMode(exhaust_fan, OUTPUT);
   pinMode(3, OUTPUT);
-  pinMode(DHTPIN, INPUT);
 
   Wire.begin();
   Serial.begin(115200);  // Start serial comunication at baud=115200
-  dht.begin();
-
+  Serial.println("starting...");
+  espSerial.begin(9600);
   bSetting.attachPush(bSettingPushCallback);
   bUpdate.attachPush(bUpdatePushCallback);
   btLamp.attachPush(btLampPushCallback);
@@ -165,12 +156,6 @@ void setup() {
   //  Serial.print(myRTC.getSecond(), DEC);
   //  Serial.println();
 
-  // Serial.print(F("Humidity: "));
-  // Serial.print(humidity);
-  // Serial.print(F("%  Temperature: "));
-  // Serial.print(temperature);
-  // Serial.println(F("°C "));
-
   //save_setPoint();
   //splitSP(str_setpoints);
   call_setPoint();
@@ -184,15 +169,20 @@ void loop() {
 
 
   currentMillis = millis();
-  //temperature, humidity = measureDHT22();
+  if (espSerial.available()) {
+    String receivedString = espSerial.readStringUntil('\n');  // Read the string until a newline character is received
+    //    Serial.println(receivedString);                          // Print the received string on Serial Monitor
+    getSensorVal(receivedString);
+  }
 
   if (currentMillis - previousMillis >= interval) {
-//    getTime();
+    //getTime();
+    nex_SendData();
     //    sprintf (buffer2, "%d/%d/%d\t%d:%d:%d", year, month, date, hour, minute, second);
     //    Serial.println(buffer2);
-    measureDHT22();
     LEDcontrol();
     previousMillis = currentMillis;
+
   }
 
   checkMode();

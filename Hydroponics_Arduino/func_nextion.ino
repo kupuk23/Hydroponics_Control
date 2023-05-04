@@ -1,3 +1,21 @@
+void nex_SendData() {
+  sprintf (buffer2, "suhu.txt=\"%s\"", temp.c_str());
+  Serial.print(buffer2);
+  clearNextionSerial();
+  sprintf (buffer2, "air.txt=\"%s\"", dist.c_str());
+  Serial.print(buffer2);
+  clearNextionSerial();
+  sprintf (buffer2, "humidity.txt=\"%s\"", humid.c_str());
+  Serial.print(buffer2);
+  clearNextionSerial();
+  sprintf (buffer2, "tds.txt=\"%s\"", tds.c_str());
+  Serial.print(buffer2);
+  clearNextionSerial();
+  sprintf (buffer2, "ph.txt=\"%s\"", ph.c_str());
+  Serial.print(buffer2);
+  clearNextionSerial();
+}
+
 void nex_SendTime(int yr, int m, int d, int h, int mnt, int s) {
   yr += 2000;
   sprintf (buffer2, "year.txt=\"%d\"", yr);
@@ -87,7 +105,7 @@ void splitSP(char* setP) {
 
 void btLampPushCallback(void *ptr)  // Press event for button btLamp
 {
-  
+
   btLamp.getValue(&force_lamp);
   Serial.print(force_lamp);
   clearNextionSerial();
