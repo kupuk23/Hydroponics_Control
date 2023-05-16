@@ -53,8 +53,8 @@ void nex_sendSP() {
     sprintf (buffer2, "%s.val=%d", buffer, setpoint[1][i] );
     Serial.print(buffer2);
     clearNextionSerial();
-    // sprintf(buffer, "Hour : %d \t  Minute : %d ", setpoint[0][i], setpoint[1][i]);
-    // Serial.println(buffer);
+    //     sprintf(buffer, "Hour : %d \t  Minute : %d ", setpoint[0][i], setpoint[1][i]);
+    //     Serial.println(buffer);
 
   }
 }
@@ -65,16 +65,18 @@ void clearNextionSerial() {
   Serial.write(0xff);
 }
 
-void bSettingPushCallback(void *ptr)  // Press event for button b1
+void bSettingPushCallback(void *ptr)  // Press event for button setting
 {
   nex_sendSP();
 }  // End of press event
 
 
-void bUpdatePushCallback(void *ptr)  // Press event for button b1
+void bUpdatePushCallback(void *ptr)  // Press event for button Update
 {
+  memset(buffer, 0, sizeof(buffer));  // Clear the buffer, so we can start using it
   nex_setpoints.getText(buffer, sizeof(buffer));
-  //Serial.println(buffer);
+  //  t13.getText(buffer, sizeof(buffer));
+  //  Serial.println(buffer);
   splitSP(buffer);
   call_setPoint();
   delay(500);
@@ -83,7 +85,7 @@ void bUpdatePushCallback(void *ptr)  // Press event for button b1
   //    Serial.print(buffer2);
   //    clearNextionSerial();
   //  }
-  nex_sendSP();
+  //nex_sendSP();
 }
 
 

@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "sketch": "Hydroponics_Arduino.ino",
+    "port": "COM8"
+}

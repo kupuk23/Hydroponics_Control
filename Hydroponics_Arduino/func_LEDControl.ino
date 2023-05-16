@@ -34,9 +34,9 @@ void LEDcontrol () {
     }
   }
   else {
-    digitalWrite(LAMP1, HIGH);  // Turn ON internal LED
-    digitalWrite(LAMP2, HIGH);
-    digitalWrite(LAMP3, HIGH);
+    digitalWrite(LAMP1, !HIGH);  // Turn ON internal LED
+    digitalWrite(LAMP2, !HIGH);
+    digitalWrite(LAMP3, !HIGH);
   }
 }
 
@@ -46,13 +46,13 @@ void growLight_ON(int rack)
 {
   switch (rack) {
     case 0:
-      digitalWrite(LAMP1, HIGH);
+      digitalWrite(LAMP1, !HIGH);
       break;
     case 2:
-      digitalWrite(LAMP2, HIGH);
+      digitalWrite(LAMP2, !HIGH);
       break;
     case 4:
-      digitalWrite(LAMP3, HIGH);
+      digitalWrite(LAMP3, !HIGH);
       break;
   }
 }
@@ -61,13 +61,13 @@ void growLight_OFF(int rack)
 {
   switch (rack) {
     case 0:
-      digitalWrite(LAMP1, LOW);
+      digitalWrite(LAMP1, !LOW);
       break;
     case 2:
-      digitalWrite(LAMP2, LOW);
+      digitalWrite(LAMP2, !LOW);
       break;
     case 4:
-      digitalWrite(LAMP3, LOW);
+      digitalWrite(LAMP3, !LOW);
       break;
   }
 }
