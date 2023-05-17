@@ -107,10 +107,11 @@ void splitSP(char* setP) {
 
 void btLampPushCallback(void *ptr)  // Press event for button btLamp
 {
-
+  
   btLamp.getValue(&force_lamp);
-  Serial.print(force_lamp);
-  clearNextionSerial();
+  Serial.println(force_lamp);
+//  Serial.print(force_lamp);
+//  clearNextionSerial();
 }  // End of press event
 
 
