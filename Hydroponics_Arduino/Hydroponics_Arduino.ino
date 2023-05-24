@@ -44,7 +44,7 @@ volatile bool ledOn = false;
 volatile int interruptCounter = 0;
 bool door_opened = false;
 bool limitSW_state, selector_state;
-char buffer[40] = {0};
+char buffer[35] = {0};
 /*
   [0][x] = Hour, [1][x] = Minute,
   x = [Start setpoint 1, end setpoint 1, start setpoint 2, end setpoint 2 ...]
@@ -77,7 +77,6 @@ int CurrentPage = 0;
 char buffer2[40];
 NexText nex_setpoints = NexText(1, 44, "setpoints");
 NexButton bSetting = NexButton(0, 7, "bSetting");  // Button added
-NexButton bBack = NexButton(1, 22, "bBack");       // Button added
 NexButton bUpdate = NexButton(1, 57, "bUpdate");   // Button added
 NexDSButton btLamp = NexDSButton(1, 37, "btLamp"); // Dual state button added
 NexPage page0 = NexPage(0, 0, "page0"); // Page added as a touch event
@@ -86,7 +85,6 @@ NexPage page1 = NexPage(1, 0, "page1"); // Page added as a touch event
 NexTouch *nex_listen_list[] =
 {
   &bSetting, // Button added
-  &bBack,    // Button added
   &bUpdate,  // Button added
   &btLamp,   // Button added
   &page0,    // Page added as a touch event
@@ -116,7 +114,7 @@ void setup() {
   sei();
 
   //Initialize PinModes
-
+  pinMode(13, OUTPUT);
   pinMode(SELECTOR, INPUT);
   pinMode(PUMP, OUTPUT);
   pinMode(LIMIT_SW, INPUT);
@@ -158,7 +156,7 @@ void setup() {
 
 
 void loop() {
-
+           // End of touch event
   currentMillis = millis();
   if (espSerial.available()) {
     String receivedString = espSerial.readStringUntil('\n');  // Read the string until a newline character is received

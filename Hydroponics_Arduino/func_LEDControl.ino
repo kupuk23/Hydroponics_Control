@@ -11,6 +11,7 @@ void LEDcontrol () {
 
 
   if (force_lamp != 1) {
+    digitalWrite(13,LOW);
     for (int a = 0; a <= 4; a = a + 2)
     { if (setpoint[0][a] <= hour && hour <= setpoint[0][a + 1])
       {
@@ -34,6 +35,7 @@ void LEDcontrol () {
     }
   }
   else {
+    digitalWrite(13,HIGH);
     digitalWrite(LAMP1, !HIGH);  // Turn ON internal LED
     digitalWrite(LAMP2, !HIGH);
     digitalWrite(LAMP3, !HIGH);
